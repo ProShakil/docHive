@@ -1,0 +1,218 @@
+
+/* ==========================================================
+   DocHive Dashboard
+========================================================== */
+
+.dochive-dashboard{
+    padding:15px 0;
+}
+
+/* ==========================================================
+   Stats Cards
+========================================================== */
+
+.dochive-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.dochive-stat-card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:6px;
+    padding:18px;
+    transition:.2s;
+}
+
+.dochive-stat-card:hover{
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+
+.stat-title{
+    font-size:13px;
+    color:#666;
+    margin-bottom:12px;
+    font-weight:500;
+}
+
+.stat-number{
+    font-size:42px;
+    line-height:1;
+    font-weight:700;
+    color:#1f2937;
+    margin-bottom:10px;
+}
+
+.stat-growth{
+    font-size:12px;
+    color:#10b981;
+    font-weight:500;
+}
+
+/* ==========================================================
+   Panel
+========================================================== */
+
+.dochive-panel{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:6px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.dochive-panel-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 18px;
+    border-bottom:1px solid #e5e7eb;
+    background:#fff;
+    font-size:14px;
+    font-weight:600;
+    color:#111827;
+}
+
+.dochive-panel-header::after{
+    content:"›";
+    color:#9ca3af;
+    font-size:20px;
+    line-height:1;
+}
+
+/* ==========================================================
+   Table
+========================================================== */
+
+.dochive-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.dochive-table thead th{
+    background:#fafafa;
+    color:#6b7280;
+    font-size:13px;
+    font-weight:600;
+    text-align:left;
+    padding:12px 18px;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.dochive-table tbody td{
+    padding:14px 18px;
+    border-bottom:1px solid #f1f5f9;
+    font-size:13px;
+    color:#374151;
+}
+
+.dochive-table tbody tr:last-child td{
+    border-bottom:none;
+}
+
+.dochive-table tbody tr:hover{
+    background:#fafafa;
+}
+
+.dochive-table a{
+    text-decoration:none;
+    color:#2271b1;
+    font-weight:500;
+}
+
+.dochive-table a:hover{
+    color:#135e96;
+}
+
+/* ==========================================================
+   Status
+========================================================== */
+
+.status-publish{
+    color:#10b981;
+    font-weight:600;
+    font-size:13px;
+}
+
+/* ==========================================================
+   Quick Links
+========================================================== */
+
+.dochive-actions{
+    padding:18px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.dochive-actions a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:8px 14px;
+    border:1px solid #c3c4c7;
+    border-radius:4px;
+    background:#f6f7f7;
+    text-decoration:none;
+    color:#2271b1;
+    font-size:13px;
+    font-weight:500;
+    transition:.2s;
+}
+
+.dochive-actions a:hover{
+    background:#fff;
+    border-color:#2271b1;
+}
+
+/* ==========================================================
+   WordPress Dashboard Fix
+========================================================== */
+
+#dochive_dashboard .inside{
+    margin:0 !important;
+    padding:0 !important;
+}
+
+#dochive_dashboard.postbox{
+    border:none !important;
+    box-shadow:none !important;
+    background:transparent !important;
+}
+
+#dochive_dashboard .postbox-header{
+    display:none !important;
+}
+
+/* ==========================================================
+   Responsive
+========================================================== */
+
+@media (max-width:1200px){
+
+    .dochive-stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media (max-width:768px){
+
+    .dochive-stats{
+        grid-template-columns:1fr;
+    }
+
+    .dochive-actions{
+        flex-direction:column;
+    }
+
+    .dochive-actions a{
+        width:100%;
+    }
+
+    .dochive-table{
+        display:block;
+        overflow-x:auto;
+    }
+}

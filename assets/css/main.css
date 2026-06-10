@@ -1,0 +1,247 @@
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+}
+
+.container{
+    width:1200px;
+    max-width:95%;
+    margin:auto;
+}
+
+.site-header{
+    padding:0px 0;
+    border-bottom:1px solid #eee;
+}
+
+.site-footer{
+    padding:30px 0;
+    border-top:1px solid #eee;
+    text-align:center;
+}
+
+.doctor-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+.doctor-card{
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
+    transition:.3s;
+}
+
+.doctor-card:hover{
+    transform:translateY(-5px);
+}
+
+.doctor-card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.doctor-card h3{
+    padding:15px;
+    margin:0;
+}
+
+.doctor-profile{
+    display:flex;
+    gap:40px;
+    margin:50px 0;
+    transition: all 0.25s ease;
+}
+
+.doctor-profile:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+.badge {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+.doctor-featured{
+    display:inline-block;
+    background:#fff4d6;
+    padding:8px 15px;
+    border-radius:30px;
+    margin-bottom:15px;
+}
+
+.doctor-meta p{
+    margin:10px 0;
+}
+
+.doctor-about{
+    border-radius: 12px;
+}
+.doctor-about .card-title {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.doctor-about .card-text {
+    line-height: 1.7;
+    color: #444;
+}
+
+.doctor-chambers{
+    margin-top:60px;
+}
+
+.doctor-chambers h2{
+    margin-bottom:25px;
+}
+
+.chamber-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.chamber-card{
+    background:#fff;
+    border-radius:16px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+    border:1px solid #edf2f7;
+}
+
+.chamber-card h3{
+    margin:0 0 15px;
+    color:#0f766e;
+}
+
+.chamber-card p{
+    margin:10px 0;
+    line-height:1.7;
+}
+
+.chamber-card a{
+    text-decoration:none;
+}
+
+/* Footer */
+
+.site-footer {
+    background: #0f172a;
+}
+
+.site-footer h5 {
+    color: #fff;
+}
+
+.footer-menu,
+.footer-legal-menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.footer-menu li {
+    margin-bottom: 10px;
+}
+
+.footer-menu a,
+.footer-legal-menu a {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: all .3s ease;
+}
+
+.footer-menu a:hover,
+.footer-legal-menu a:hover {
+    color: #0dcaf0;
+}
+
+.footer-legal-menu li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.footer-legal-menu li:first-child {
+    margin-left: 0;
+}
+
+.footer-bottom {
+    background: rgba(0,0,0,.15);
+}
+
+/* archive Doctor */
+.doctor-hero{
+    min-height:280px;
+    background:
+    linear-gradient(
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.65)
+    ),
+    url('../images/bg-2.png');
+    background-size:cover;
+    background-position:center;
+}
+
+.search-wrapper{
+    margin-top:-45px;
+    position:relative;
+    z-index:10;
+}
+
+.doctor-card{
+    transition:.3s;
+}
+
+.doctor-card:hover{
+    transform:translateY(-6px);
+}
+
+.doctor-card img{
+    height:260px;
+    object-fit:cover;
+}
+
+.doctor-count{
+    color:#6c757d;
+    font-size:.95rem;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color:#fff !important;
+}
+
+/* Floating Call */
+.floating-call-btn {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #1e5f6a;
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    z-index: 9999;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.floating-call-btn:hover {
+    background: #1e5f6a;
+    color: #fff;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.floating-call-btn small {
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+}
+

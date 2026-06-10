@@ -1,0 +1,64 @@
+.dochive-chamber{
+    background:#fff;
+    border:1px solid #ddd;
+    margin-bottom:15px;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.chamber-header{
+    background:#f7f7f7;
+    padding:10px 15px;
+    cursor:move;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.chamber-header h3{
+    margin:0;
+}
+
+.chamber-actions{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.chamber-actions .button{
+    min-width:auto;
+    padding:0 8px;
+}
+
+.chamber-actions .dashicons{
+    line-height:30px;
+}
+
+.chamber-body{
+    padding:15px;
+}
+
+.days-box label{
+    margin-right:10px;
+    font-size:12px;
+}
+
+.schedule-wrapper{
+    margin:15px 0;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+.schedule-item{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+.schedule-item select,
+.schedule-item input{
+    min-width:150px;
+}
