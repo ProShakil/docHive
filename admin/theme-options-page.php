@@ -33,6 +33,10 @@
             <span class="dashicons dashicons-admin-tools"></span>
             <small>Admin Config</small>
         </div>
+        <div class="dochive-tab" data-tab="plugins">
+            <span class="dashicons dashicons-admin-plugins"></span>
+            <small>Required Plugins</small>
+        </div>
     </div>
 
     <!-- RIGHT CONTENT -->
@@ -290,6 +294,102 @@
                     </td>
                 </tr>
             </table>
+        </div>
+        <!-- Plugin -->
+
+        <!-- Required Plugins -->
+        <div class="tab-content" id="plugins">
+
+            <?php
+
+            include_once ABSPATH . 'wp-admin/includes/plugin.php';
+
+            $plugins = array(
+
+                array(
+                    'name' => 'Elementor',
+                    'file' => 'elementor/elementor.php',
+                ),
+
+                array(
+                    'name' => 'Contact Form 7',
+                    'file' => 'contact-form-7/wp-contact-form-7.php',
+                ),
+
+            );
+
+            ?>
+
+            <table class="widefat striped">
+
+                <thead>
+                    <tr>
+                        <th>Plugin</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <?php foreach ($plugins as $plugin) : ?>
+
+                        <?php
+
+                        $plugin_path = WP_PLUGIN_DIR . '/' . $plugin['file'];
+
+                        if (!file_exists($plugin_path)) {
+
+                            $status = '<span style="color:#dc3545;font-weight:600;">Not Installed</span>';
+
+                        } elseif (is_plugin_active($plugin['file'])) {
+
+                            $status = '<span style="color:#198754;font-weight:600;">Active</span>';
+
+                        } else {
+
+                            $status = '<span style="color:#fd7e14;font-weight:600;">Inactive</span>';
+
+                        }
+                        $tgm_url = admin_url('themes.php?page=tgmpa-install-plugins');
+
+                        ?>
+
+                        <tr>
+                            <td><?php echo esc_html($plugin['name']); ?></td>
+                            <td><?php echo wp_kses_post($status); ?></td>
+                            <td>
+                                <?php if (!file_exists($plugin_path)) : ?>
+
+                                    <a href="<?php echo esc_url($tgm_url); ?>"
+                                    class="button button-primary">
+                                    Install
+                                    </a>
+
+                                <?php elseif (!is_plugin_active($plugin['file'])) : ?>
+
+                                    <a href="<?php echo esc_url($tgm_url); ?>"
+                                    class="button">
+                                    Activate
+                                    </a>
+
+                                <?php else : ?>
+
+                                    <span style="color:#198754;font-weight:600;">
+                                        Installed
+                                    </span>
+
+                                <?php endif; ?>
+
+                            </td>
+                        </tr>
+
+                    <?php endforeach; ?>
+
+                </tbody>
+
+            </table>
+
         </div>
 
     </div>

@@ -1,4 +1,6 @@
 <?php
+require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+require get_template_directory() . '/inc/tgm-config.php';
 require get_template_directory() . '/inc/setup.php';
 require get_template_directory() . '/inc/enqueue.php';
 require get_template_directory() . '/inc/post-types.php';
@@ -160,3 +162,5 @@ function custom_login_page() {
     }
 }
 add_action( 'init', 'custom_login_page' );
+
+// Custom Page Create
