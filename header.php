@@ -98,6 +98,8 @@
                     'menu_class'     => 'navbar-nav ms-auto mb-2 mb-lg-0',
                     'container'      => false,
                     'fallback_cb'    => false,
+                    'depth'          => 3,
+                    'walker'         => new WP_Bootstrap_Navwalker()
                     
                 ]);
                 ?>

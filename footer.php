@@ -25,7 +25,7 @@ $fbg = $opt['footer_bg'] ?? '#0d6efd';
 $ftext = $opt['footer_text'] ?? '#ffffff';
 ?>
 
-<footer class="site-footer" style="background: <?php echo esc_attr($fbg); ?>; color:<?php echo esc_attr($ftext); ?>;">
+<footer class="site-footer" style="background: <?php echo esc_attr($fbg); ?>; color:<?php echo esc_attr($ftext); ?>; --footer-text:<?php echo esc_attr($ftext); ?>;">
 
     <div class="footer-top py-5">
         <div class="container">
@@ -51,7 +51,7 @@ $ftext = $opt['footer_text'] ?? '#ffffff';
 
                 <!-- Column 2: Menu 1 -->
                 <?php if ($menu1_obj) : ?>
-                    <div class="<?php echo $menu_col_class; ?> col-md-6" style="color:<?php echo esc_attr($ftext); ?>;">
+                    <div class="<?php echo $menu_col_class; ?> col-md-6" style="color:<?php echo esc_attr($ftext); ?>; text-start">
 
                         <h5 class="fw-bold mb-3" style="color:<?php echo esc_attr($ftext); ?>;">
                             <?php echo esc_html($menu1_obj->name); ?>
@@ -71,7 +71,7 @@ $ftext = $opt['footer_text'] ?? '#ffffff';
 
                 <!-- Column 3: Menu 2 -->
                 <?php if ($menu2_obj) : ?>
-                    <div class="<?php echo $menu_col_class; ?> col-md-6" style="color:<?php echo esc_attr($ftext); ?>;">
+                    <div class="<?php echo $menu_col_class; ?> col-md-6" style="color:<?php echo esc_attr($ftext); ?>; text-start">
 
                         <h5 class="fw-bold mb-3" style="color:<?php echo esc_attr($ftext); ?>;">
                             <?php echo esc_html($menu2_obj->name); ?>
@@ -90,7 +90,7 @@ $ftext = $opt['footer_text'] ?? '#ffffff';
                 <?php endif; ?>
 
                 <!-- Column 4: Contact -->
-                <div class="col-lg-3 col-md-6" style="color:<?php echo esc_attr($ftext); ?>;">
+                <div class="col-lg-3 col-md-6 text-start" style="color:<?php echo esc_attr($ftext); ?>;">
                     <h5 class="fw-bold mb-3" style="color:<?php echo esc_attr($ftext); ?>;">Contact</h5>
 
                     <ul class="list-unstyled">
@@ -139,7 +139,7 @@ $ftext = $opt['footer_text'] ?? '#ffffff';
                         'fallback_cb'    => false,
                         'link_before'    => '',
                         'link_after'     => '',
-                        'depth'          => 3,
+                        'depth'          => 1,
                     ]);
                     ?>
 
