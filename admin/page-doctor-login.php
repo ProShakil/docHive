@@ -449,7 +449,7 @@ body::before {
 
                 <li>
                     <i>✓</i>
-                    Specialty Directory
+                    speciality Directory
                 </li>
 
                 <li>

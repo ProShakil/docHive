@@ -6,11 +6,11 @@ function mytheme_register_required_plugins() {
 
     $plugins = array(
 
-        array(
-            'name' => 'Elementor',
-            'slug' => 'elementor',
-            'required' => true,
-        ),
+        // array(
+        //     'name' => 'Elementor',
+        //     'slug' => 'elementor',
+        //     'required' => true,
+        // ),
 
         array(
             'name' => 'Contact Form 7',

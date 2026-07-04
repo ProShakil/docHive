@@ -29,6 +29,7 @@ function dochive_register_taxonomies()
             'show_admin_column' => true,
             'show_in_rest'      => true,
             'show_in_nav_menus' => true,
+            'has_archive' => true,
             'rewrite' => [
                 'slug' => 'specialty'
             ]
