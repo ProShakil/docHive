@@ -158,7 +158,8 @@ function custom_login_page() {
     $custom_slug = $saved_settings['admin_url'];
     $request_uri = $_SERVER['REQUEST_URI'];
     if ( strpos( $request_uri, '/' . $custom_slug ) !== false ) {
-        require_once( ABSPATH . 'wp-login.php' );
+        // require_once( ABSPATH . 'wp-login.php' );
+        require get_template_directory() . '/admin/page-doctor-login.php';
         exit;
     }
 }

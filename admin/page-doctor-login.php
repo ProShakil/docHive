@@ -60,11 +60,29 @@ if (
 <meta charset="<?php bloginfo('charset'); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<?php wp_head(); ?>
+<title>
+    <?php
+    bloginfo('name');
+    echo ' – ';
+    esc_html_e('Login', 'dochive');
+    ?>
+</title>
+
+<?php
+// WordPress Site Icon (Appearance > Customize > Site Identity)
+if ( function_exists('has_site_icon') && has_site_icon() ) {
+    wp_site_icon();
+} else {
+    ?>
+    <link rel="icon" href="<?php echo esc_url( get_site_icon_url(32) ); ?>">
+    <?php
+}
+?>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+<link rel='stylesheet' id='bootstrap-css' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css?ver=5.3.8' media='all' />
+<link rel='stylesheet' id='bootstrap-icons-css' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css?ver=1.13.1' media='all' />
 <style>
 
 :root{
@@ -598,7 +616,7 @@ function togglePassword(){
 
 </script>
 
-<?php wp_footer(); ?>
+
 
 </body>
 </html>

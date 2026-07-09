@@ -34,7 +34,7 @@ $ftext = $opt['footer_text'] ?? '#ffffff';
 
                 <!-- Column 1: Site Info -->
                 <div class="col-lg-3 col-md-6">
-                    <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
+                    <a class="navbar-brand text-start" href="<?php echo esc_url(home_url('/')); ?>">
                         <?php if (!empty($opt['logo'])) : ?>
                             <img src="<?php echo esc_url($opt['logo']); ?>" alt="<?php bloginfo('name'); ?>" style="max-height:40px; width:auto;">
                         <?php else : ?>
@@ -42,7 +42,7 @@ $ftext = $opt['footer_text'] ?? '#ffffff';
                         <?php endif; ?>
 
                     </a>
-                    <p style="color:<?php echo esc_attr($ftext); ?>;">
+                    <p style="color:<?php echo esc_attr($ftext); ?>;" class="text-start">
                         <?php if (!empty($opt['footer_desc'])) : ?>
                             <?php echo nl2br(esc_html($opt['footer_desc'])); ?>
                         <?php endif; ?>
@@ -51,7 +51,7 @@ $ftext = $opt['footer_text'] ?? '#ffffff';
 
                 <!-- Column 2: Menu 1 -->
                 <?php if ($menu1_obj) : ?>
-                    <div class="<?php echo $menu_col_class; ?> col-md-6" style="color:<?php echo esc_attr($ftext); ?>; text-start">
+                    <div class="<?php echo $menu_col_class; ?> col-md-6 text-start" style="color:<?php echo esc_attr($ftext); ?>; text-start">
 
                         <h5 class="fw-bold mb-3" style="color:<?php echo esc_attr($ftext); ?>;">
                             <?php echo esc_html($menu1_obj->name); ?>
@@ -61,7 +61,7 @@ $ftext = $opt['footer_text'] ?? '#ffffff';
                         wp_nav_menu([
                             'theme_location' => 'footer_menu_1',
                             'container'      => false,
-                            'menu_class'     => 'footer-menu list-unstyled',
+                            'menu_class'     => 'footer-menu list-unstyled text-start',
                             'fallback_cb'    => false,
                         ]);
                         ?>
@@ -71,7 +71,7 @@ $ftext = $opt['footer_text'] ?? '#ffffff';
 
                 <!-- Column 3: Menu 2 -->
                 <?php if ($menu2_obj) : ?>
-                    <div class="<?php echo $menu_col_class; ?> col-md-6" style="color:<?php echo esc_attr($ftext); ?>; text-start">
+                    <div class="<?php echo $menu_col_class; ?> col-md-6 text-start" style="color:<?php echo esc_attr($ftext); ?>;">
 
                         <h5 class="fw-bold mb-3" style="color:<?php echo esc_attr($ftext); ?>;">
                             <?php echo esc_html($menu2_obj->name); ?>
@@ -81,7 +81,7 @@ $ftext = $opt['footer_text'] ?? '#ffffff';
                         wp_nav_menu([
                             'theme_location' => 'footer_menu_2',
                             'container'      => false,
-                            'menu_class'     => 'footer-menu list-unstyled',
+                            'menu_class'     => 'footer-menu list-unstyled text-start',
                             'fallback_cb'    => false,
                         ]);
                         ?>
@@ -107,7 +107,7 @@ $ftext = $opt['footer_text'] ?? '#ffffff';
                             </a>
                         </li>
                         <li>
-                            <i class="bi bi-geo-alt"></i> Dhaka, Bangladesh
+                            <i class="bi bi-geo-alt"></i> <?php echo esc_html($opt['footer_address']); ?>
                         </li>
                     </ul>
                 </div>
