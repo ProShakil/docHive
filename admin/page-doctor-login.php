@@ -36,6 +36,10 @@ if (
 
         } else {
 
+            wp_set_current_user($user->ID);
+            wp_set_auth_cookie($user->ID, !empty($_POST['rememberme']));
+            do_action('wp_login', $user->user_login, $user);
+
             if (in_array('doctor', (array) $user->roles)) {
 
                 wp_safe_redirect(

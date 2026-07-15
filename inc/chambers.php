@@ -55,28 +55,28 @@ function dochive_chambers_callback($post) {
 
             <div class="chamber-body">
 
-                <input type="text"
+                <div class="mb-3"><input type="text"
                     name="doctor_chambers[<?php echo $index; ?>][hospital]"
                     value="<?php echo esc_attr($chamber['hospital'] ?? ''); ?>"
                     placeholder="Hospital Name"
-                    class="widefat mb-2">
+                    class="form-control"></div>
 
-                <input type="text"
+                <div class="mb-3"><input type="text"
                     name="doctor_chambers[<?php echo $index; ?>][district]"
                     value="<?php echo esc_attr($chamber['district'] ?? ''); ?>"
                     placeholder="District"
-                    class="widefat mb-2">
+                    class="form-control"></div>
 
-                <input type="text"
+                <div class="mb-3"><input type="text"
                     name="doctor_chambers[<?php echo $index; ?>][area]"
                     value="<?php echo esc_attr($chamber['area'] ?? ''); ?>"
                     placeholder="Area"
-                    class="widefat mb-2">
+                    class="form-control"></div>
 
-                <textarea
+                <div class="mb-3"><textarea
                     name="doctor_chambers[<?php echo $index; ?>][address]"
                     placeholder="Address"
-                    class="widefat"><?php echo esc_textarea($chamber['address'] ?? ''); ?></textarea>
+                    class="form-control"><?php echo esc_textarea($chamber['address'] ?? ''); ?></textarea></div>
 
                 <?php $schedules = $chamber['schedules'] ?? []; ?>
 
@@ -86,46 +86,53 @@ function dochive_chambers_callback($post) {
 
                     <?php foreach ($schedules as $sindex => $schedule) : ?>
 
-                        <div class="schedule-item">
+                        <div class="schedule-item row g-2 align-items-center mb-3">
 
-                            <select name="doctor_chambers[<?php echo $index; ?>][schedules][<?php echo $sindex; ?>][day]">
-
-                                <?php
-                                $days = [
-                                    'Saturday',
-                                    'Sunday',
-                                    'Monday',
-                                    'Tuesday',
-                                    'Wednesday',
-                                    'Thursday',
-                                    'Friday'
-                                ];
-
-                                foreach ($days as $day) :
-                                ?>
-
-                                    <option value="<?php echo esc_attr($day); ?>"
-                                        <?php selected($schedule['day'] ?? '', $day); ?>>
-                                        <?php echo esc_html($day); ?>
-                                    </option>
-
-                                <?php endforeach; ?>
-
-                            </select>
-
-                            <input
-                                type="time"
-                                name="doctor_chambers[<?php echo $index; ?>][schedules][<?php echo $sindex; ?>][start_time]"
-                                value="<?php echo esc_attr($schedule['start_time'] ?? ''); ?>">
-
-                            <input
-                                type="time"
-                                name="doctor_chambers[<?php echo $index; ?>][schedules][<?php echo $sindex; ?>][end_time]"
-                                value="<?php echo esc_attr($schedule['end_time'] ?? ''); ?>">
-
-                            <button type="button" class="button remove-schedule text-danger border-danger">
-                                <span class="dashicons dashicons-trash"></span>
-                            </button>
+                            <div class="col-12 col-md">
+                                <select class="form-select" name="doctor_chambers[<?php echo $index; ?>][schedules][<?php echo $sindex; ?>][day]">
+        
+                                    <?php
+                                    $days = [
+                                        'Saturday',
+                                        'Sunday',
+                                        'Monday',
+                                        'Tuesday',
+                                        'Wednesday',
+                                        'Thursday',
+                                        'Friday'
+                                    ];
+        
+                                    foreach ($days as $day) :
+                                    ?>
+        
+                                        <option value="<?php echo esc_attr($day); ?>"
+                                            <?php selected($schedule['day'] ?? '', $day); ?>>
+                                            <?php echo esc_html($day); ?>
+                                        </option>
+        
+                                    <?php endforeach; ?>
+        
+                                </select>
+                            </div>
+                            <div class="col-12 col-md">
+                                <input
+                                    type="time"
+                                    class="form-control"
+                                    name="doctor_chambers[<?php echo $index; ?>][schedules][<?php echo $sindex; ?>][start_time]"
+                                    value="<?php echo esc_attr($schedule['start_time'] ?? ''); ?>">
+                            </div>
+                            <div class="col-12 col-md">
+                                <input
+                                    type="time"
+                                    class="form-control"
+                                    name="doctor_chambers[<?php echo $index; ?>][schedules][<?php echo $sindex; ?>][end_time]"
+                                    value="<?php echo esc_attr($schedule['end_time'] ?? ''); ?>">
+                            </div>
+                            <div class="col-12 col-md-auto">
+                                <button type="button" class="button remove-schedule text-danger border-danger">
+                                    <span class="dashicons dashicons-trash"></span>
+                                </button>
+                            </div>
 
                         </div>
 
@@ -138,29 +145,37 @@ function dochive_chambers_callback($post) {
                 </div>
 
                 <!-- CONTACT -->
-                <input type="text"
+                <div class="mb-3">
+                    <input type="text"
                     name="doctor_chambers[<?php echo $index; ?>][contact1]"
                     value="<?php echo esc_attr($chamber['contact1'] ?? ''); ?>"
                     placeholder="Contact 1"
-                    class="widefat mb-2">
+                    class="form-control">
+                </div>
 
-                <input type="text"
+                <div class="mb-3">
+                    <input type="text"
                     name="doctor_chambers[<?php echo $index; ?>][contact2]"
                     value="<?php echo esc_attr($chamber['contact2'] ?? ''); ?>"
                     placeholder="Contact 2"
-                    class="widefat mb-2">
+                    class="form-control">
+                </div>
 
-                <input type="text"
+                <div class="mb-3">
+                    <input type="text"
                     name="doctor_chambers[<?php echo $index; ?>][whatsapp]"
                     value="<?php echo esc_attr($chamber['whatsapp'] ?? ''); ?>"
                     placeholder="WhatsApp"
-                    class="widefat mb-2">
+                    class="form-control">
+                </div>
 
-                <input type="url"
+                <div class="mb-3">
+                    <input type="url"
                     name="doctor_chambers[<?php echo $index; ?>][map]"
                     value="<?php echo esc_attr($chamber['map'] ?? ''); ?>"
                     placeholder="Google Map URL"
-                    class="widefat mb-2">
+                    class="form-control">
+                </div>
 
             </div>
         </div>
